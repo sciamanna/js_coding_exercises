@@ -36,7 +36,7 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  rev = "";
+  let rev = "";
   for (let i = word.length-1; i>=0; i--){
     rev += word[i];
   }
@@ -77,7 +77,7 @@ function simpleFizzBuzz(n) {
     if (n % 3 === 0 && n % 5 ===0) return 'fizzbuzz';
     if (n % 3 === 0) return 'fizz';
     if (n % 5 === 0) return 'buzz';
-    else return n;ß
+    else return n;
 }
 
 module.exports = {
