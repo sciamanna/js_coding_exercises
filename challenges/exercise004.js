@@ -45,7 +45,6 @@ function getIntegers(nums) {
     }
   });
   return ints;
-
 }
 
 function getCities(users) {

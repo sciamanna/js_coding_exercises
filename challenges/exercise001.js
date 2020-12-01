@@ -1,3 +1,5 @@
+const { TestScheduler } = require("jest");
+
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   return word.substr(0, 1).toUpperCase() + word.substr(1);
@@ -13,23 +15,23 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   // return (originalPrice += originalPrice*vatRate/100).toFixed(2);
-  let num = originalPrice += originalPrice * vatRate / 100;
+  const num = originalPrice += originalPrice * vatRate / 100;
   return Math.round(num * 100 + Number.EPSILON) / 100;
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  let num = originalPrice - (originalPrice * reduction / 100)
+  const num = originalPrice - (originalPrice * reduction / 100)
   return Math.round(num * 100 + Number.EPSILON) / 100;
 }
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  let rem = str.length % 2;
-  let pos = parseInt(str.length / 2);
+  const rem = str.length % 2;
+  const pos = parseInt(str.length / 2);
   if (rem > 0) {
-    return str[pos];
+    return str[pos];clearImmediate;
   }
   return str[pos - 1] + str[pos]
 }

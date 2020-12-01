@@ -60,7 +60,6 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
-
   for(let i = 2; i < n; i++)
     if(n % i === 0) return false;
   return n > 1;
@@ -108,8 +107,6 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-
-  let result = false;
   let staffNumber = 0;
 
   for(let i = 0; i < staff.length; i++) {
@@ -126,7 +123,7 @@ const areWeCovered = (staff, day) => {
     }
   }
   //console.log("CLOSED!");  
-  return result;
+  return false;
 };
 
 module.exports = {
