@@ -1,11 +1,7 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   const smallNums = nums.filter(function (num) {
-    if (num < 1) {
-      return true;
-    } else {
-      return false;
-    }
+    return (num < 1)
   });
   return smallNums;
 }
@@ -14,11 +10,7 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   const newNames = names.filter(function (name) {
-    if (name.startsWith(char)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (name.startsWith(char)) 
   });
   return newNames;
 }
@@ -26,11 +18,7 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   const verbs = words.filter(function (word) {
-    if (word.startsWith('to ')) {
-      return true;
-    } else {
-      return false;
-    }
+    return (word.startsWith('to '))
   });
   return verbs;
 }
@@ -38,11 +26,7 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   const ints = nums.filter(function (num) {
-    if (Number.isInteger(num)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (Number.isInteger(num))
   });
   return ints;
 }
@@ -74,11 +58,7 @@ function findSentencesContaining(sentences, str) {
     const newSentences = sentences.filter(function (sentence) {
       const lSentence = sentence.toLowerCase();
       const lStr = str.toLowerCase();
-      if (lSentence.includes(lStr)) {
-        return true;
-      } else {
-        return false;
-      }
+      return (lSentence.includes(lStr))
     });
     return newSentences;    
 }

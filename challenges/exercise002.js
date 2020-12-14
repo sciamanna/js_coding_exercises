@@ -28,8 +28,7 @@ function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
   const code = person.address.postCode;
   const citie = person.address.city;
-  if (citie === "Manchester" && code.substr(0, 1) === "M") return true;
-  return false;
+  return (citie === "Manchester" && code.substr(0, 1) === "M");
 }
 
 module.exports = {

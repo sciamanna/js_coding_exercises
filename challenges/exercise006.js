@@ -60,8 +60,8 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
-  for(let i = 2; i < n; i++)
-    if(n % i === 0) return false;
+  for (let i = 2; i < n; i++)
+    if (n % i === 0) return false;
   return n > 1;
 };
 
@@ -83,9 +83,9 @@ const createMatrix = (n, fill) => {
   if (fill === undefined) throw new Error("fill is required");
 
   let result = [];
-  for(let i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     result[i] = [];
-    for(let j = 0; j < n; j++)
+    for (let j = 0; j < n; j++)
       result[i][j] = fill;
   }
   return result;
@@ -109,14 +109,13 @@ const areWeCovered = (staff, day) => {
   if (day === undefined) throw new Error("day is required");
   let staffNumber = 0;
 
-  for(let i = 0; i < staff.length; i++) {
+  for (let i = 0; i < staff.length; i++) {
     //console.log("Checking " + staff[i].name);
-    for(let j = 0; j < staff[i].rota.length; j++) {
+    for (let j = 0; j < staff[i].rota.length; j++) {
       //console.log("Found " + staff[i].rota[j]);
-      if (day===staff[i].rota[j])
+      if (day === staff[i].rota[j])
         staffNumber++;
-      if (staffNumber >= 3)
-      {  
+      if (staffNumber >= 3) {
         //console.log("OPEN!");  
         return true;
       }

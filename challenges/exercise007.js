@@ -80,17 +80,12 @@ const getScreentimeAlertList = (users, date) => {
   let screentime = 0;
 
   for(let i = 0; i < users.length; i++) {
-    //console.log(users[i].username);
-    //console.log(users[i].screenTime);
     for(let j = 0; j < users[i].screenTime.length; j++) {
-      //console.log(users[i].screenTime[j].date);
       if (date===users[i].screenTime[j].date) {
         screentime = 0;
-        //console.log(users[i].username + " - " + users[i].screenTime[j].date);
         for (let key in users[i].screenTime[j].usage) {
           value = users[i].screenTime[j].usage[key];
-          screentime += value;          
-          //console.log(users[i].username + " - " + users[i].screenTime[j].date + " - " + value + " - TOTAL " + screentime);   
+          screentime += value;           
         } 
         if ( screentime >= 100)
           results.push(users[i].username);
@@ -148,19 +143,15 @@ const findWinner = board => {
 
   let x = 0;
   let o = 0;
-
-  //console.log(board);
   // check horizontal lines
   for(let i = 0; i < board.length; i++) {
     if (board[i].length != 3) throw new Error("board size should be 3x3");
     for(let j = 0; j < board[i].length; j++) {
-      //console.log("i: " + i + " j:" + j);
       if (board[i][j] == "X")
         x += boardvalues[i][j];
       else if (board[i][j] == "0")
         o += boardvalues[i][j];
     }
-    //console.log("Horizontal Row: " + i + " X: " + x + " 0: " + o);
     if ( x == 15) return "X";
     if ( o == 15) return "0";
     x = 0, o = 0;
@@ -168,13 +159,11 @@ const findWinner = board => {
   // check vertical lines
   for(let i = 0; i < board.length; i++) {
     for(let j = 0; j < board[i].length; j++) {
-      //console.log("i: " + i + " j:" + j);
       if (board[j][i] == "X")
         x += boardvalues[i][j];
       else if (board[j][i] == "0")
         o += boardvalues[i][j];
     }
-    //console.log("Verical Row: " + i + " X: " + x + " 0: " + o);
     if ( x == 15) return "X";
     if ( o == 15) return "0";
     x = 0, o = 0;
